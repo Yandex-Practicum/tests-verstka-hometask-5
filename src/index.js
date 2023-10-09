@@ -44,7 +44,7 @@ const app = async (projectPath, lng) => {
     }
 
     const baseUrl = 'http://localhost:3000';
-    const viewport = { width: 1550, height: 1080 };
+    const viewport = { width: 1440, height: 1080 };
     const launchOptions = { args: ['--no-sandbox', '--disable-setuid-sandbox'] };
     const { browser, page } = await launchBrowser(baseUrl, { launchOptions, viewport });
     const errors = (await Promise.all([
@@ -55,10 +55,10 @@ const app = async (projectPath, lng) => {
       styles(path.join(projectPath, 'styles', 'style.css'), 'styles|style.css'),
       pseudoElements(path.join(projectPath, 'styles', 'style.css')),
       compareLayout(baseUrl, {
-        canonicalImage: 'layout-canonical-1550.jpg',
-        pageImage: 'layout-1550.jpg',
-        outputImage: 'output-1550.jpg',
-        browserOptions: { launchOptions, viewport: { width: 1550, height: 1080 } },
+        canonicalImage: 'layout-canonical-1440.jpg',
+        pageImage: 'layout-1440.jpg',
+        outputImage: 'output-1440.jpg',
+        browserOptions: { launchOptions, viewport: { width: 1440, height: 1080 } },
       }),
     ]))
       .filter(Boolean)
